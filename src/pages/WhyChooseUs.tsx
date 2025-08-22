@@ -121,7 +121,7 @@ const WhyChooseUs = () => {
       </main>
       <footer className="bg-neural-darker border-t border-border py-12 px-6">
         <div className="container mx-auto max-w-7xl text-center">
-          <div className="neural-logo text-3xl mb-4">
+          <div className="font-zen-dots text-3xl mb-4">
             <span className="neural-text">neural</span>
             <span className="ai-text"> AI</span>
           </div>
