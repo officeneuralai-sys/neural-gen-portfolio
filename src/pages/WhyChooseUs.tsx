@@ -177,7 +177,7 @@ const WhyChooseUs = () => {
             </a>
             <span className="hidden sm:block text-muted-foreground">•</span>
             <span className="text-muted-foreground">
-              © 2024 neural AI. All rights reserved.
+              © 2025 neural AI. All rights reserved.
             </span>
           </div>
         </div>
