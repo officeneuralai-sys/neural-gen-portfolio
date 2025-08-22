@@ -9,145 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
-
-// 1. Define the form schema with Zod for validation
-const formSchema = z.object({
-  fullName: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  workEmail: z.string().email({ message: "Please enter a valid email address." }),
-  phoneNumber: z.string().min(10, { message: "Please enter a valid phone number." }),
-  companyDomain: z.string().min(2, { message: "Please enter a valid domain." }),
-  serviceOfInterest: z.string(),
-  challenge: z.string().min(10, { message: "Please describe your challenge in at least 10 characters." }),
-});
-
-// 2. Create the Strategy Call Form Component
-const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      fullName: "",
-      workEmail: "",
-      phoneNumber: "",
-      companyDomain: "",
-      serviceOfInterest: serviceTitle,
-      challenge: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real application, you would send this data to your backend
-    console.log("Strategy Call Request:", values);
-    toast({
-      title: "Request Sent!",
-      description: "Our team will review your information and get back to you shortly.",
-    });
-  }
-
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          control={form.control}
-          name="fullName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Full Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="workEmail"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Work Email</FormLabel>
-              <FormControl>
-                <Input placeholder="john.doe@company.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phoneNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <Input placeholder="(123) 456-7890" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="companyDomain"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Company Domain</FormLabel>
-              <FormControl>
-                <Input placeholder="company.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="serviceOfInterest"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Service of Interest</FormLabel>
-              <FormControl>
-                <Input {...field} readOnly className="bg-muted" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="challenge"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Tell us about your project or challenge</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="e.g., We're looking to reduce customer support costs while improving response times."
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-full">Submit Request</Button>
-      </form>
-    </Form>
-  );
-};
-
+import { StrategyCallForm } from "@/components/StrategyCallForm";
 
 // This is a placeholder for your detailed service data.
 // In a real application, you would fetch this from a CMS or an API.
@@ -283,7 +145,7 @@ const serviceDetails: { [key: string]: any } = {
   },
   'business-analytics': {
     title: "Business Analytics",
-    description: "AI-powered insights and predictive analytics",
+    description: "Unlock the full potential of your data. Our AI-powered analytics platform transforms raw numbers into predictive insights and actionable strategies for growth.",
     keyMetrics: [
         { value: "80%", label: "Faster Data-Driven Decisions" },
         { value: "45%", label: "Improved Forecast Accuracy" },
@@ -498,7 +360,7 @@ const serviceDetails: { [key: string]: any } = {
   },
   'ai-social-media-content': {
     title: "AI Social Media Content",
-    description: "Automated content creation and social media management",
+    description: "Supercharge your social media presence with AI-generated content that is consistently on-brand, engaging, and optimized for each platform.",
     keyMetrics: [
         { value: "120%", label: "Increase in Engagement" },
         { value: "20+", label: "Hours Saved Weekly" },
