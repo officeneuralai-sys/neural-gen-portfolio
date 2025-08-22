@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react';
-import ServicesSection from './ServicesSection';
 import TechnologySection from './TechnologySection';
 import BenefitsSection from './BenefitsSection';
-import WhyChooseUsSection from './WhyChooseUsSection';
 
 const MainContent = () => {
-  const [activeTab, setActiveTab] = useState('services');
+  const [activeTab, setActiveTab] = useState('technology');
 
   const tabs = [
-    { id: 'services', label: 'Our Services' },
     { id: 'technology', label: 'Our Technology' },
     { id: 'benefits', label: 'Key Benefits' },
-    { id: 'why-choose', label: 'Why Choose Us' }
   ];
 
   // Reveal animation on scroll
@@ -37,21 +33,17 @@ const MainContent = () => {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'services':
-        return <ServicesSection />;
       case 'technology':
         return <TechnologySection />;
       case 'benefits':
         return <BenefitsSection />;
-      case 'why-choose':
-        return <WhyChooseUsSection />;
       default:
-        return <ServicesSection />;
+        return <TechnologySection />;
     }
   };
 
   return (
-    <section id="services" className="py-20 px-6">
+    <section id="main-content" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
