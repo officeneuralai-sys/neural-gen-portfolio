@@ -24,20 +24,24 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 
+// 1. Define the form schema with Zod for validation
 const formSchema = z.object({
   fullName: z.string().min(2, { message: "Name must be at least 2 characters." }),
   workEmail: z.string().email({ message: "Please enter a valid email address." }),
+  phoneNumber: z.string().min(10, { message: "Please enter a valid phone number." }),
   companyDomain: z.string().min(2, { message: "Please enter a valid domain." }),
   serviceOfInterest: z.string(),
   challenge: z.string().min(10, { message: "Please describe your challenge in at least 10 characters." }),
 });
 
+// 2. Create the Strategy Call Form Component
 const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
       workEmail: "",
+      phoneNumber: "",
       companyDomain: "",
       serviceOfInterest: serviceTitle,
       challenge: "",
@@ -45,6 +49,7 @@ const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    // In a real application, you would send this data to your backend
     console.log("Strategy Call Request:", values);
     toast({
       title: "Request Sent!",
@@ -76,6 +81,19 @@ const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
               <FormLabel>Work Email</FormLabel>
               <FormControl>
                 <Input placeholder="john.doe@company.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phoneNumber"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl>
+                <Input placeholder="(123) 456-7890" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -130,6 +148,9 @@ const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
   );
 };
 
+
+// This is a placeholder for your detailed service data.
+// In a real application, you would fetch this from a CMS or an API.
 const serviceDetails: { [key: string]: any } = {
   'ai-calling-agent': {
     title: "AI Calling Agent (Contact Center 2.0)",
