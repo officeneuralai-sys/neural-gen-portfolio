@@ -1,13 +1,35 @@
+import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import ServicesSection from '@/components/ServicesSection';
 
 const Services = () => {
+  // Reveal animation on scroll
+  useEffect(() => {
+    const revealElements = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const elementVisible = 150;
+
+      reveals.forEach(reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          (reveal as HTMLElement).classList.add('revealed');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealElements);
+    revealElements(); // Initial check
+
+    return () => window.removeEventListener('scroll', revealElements);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       <main className="pt-24 pb-12 px-6">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 reveal">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Our Services
             </h1>
