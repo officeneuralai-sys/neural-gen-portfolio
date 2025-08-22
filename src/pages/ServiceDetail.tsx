@@ -1,6 +1,138 @@
 import { useParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/use-toast";
+
+// 1. Define the form schema with Zod for validation
+const formSchema = z.object({
+  fullName: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  workEmail: z.string().email({ message: "Please enter a valid email address." }),
+  companyDomain: z.string().min(2, { message: "Please enter a valid domain." }),
+  serviceOfInterest: z.string(),
+  challenge: z.string().min(10, { message: "Please describe your challenge in at least 10 characters." }),
+});
+
+// 2. Create the Strategy Call Form Component
+const StrategyCallForm = ({ serviceTitle }: { serviceTitle: string }) => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: "",
+      workEmail: "",
+      companyDomain: "",
+      serviceOfInterest: serviceTitle,
+      challenge: "",
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // In a real application, you would send this data to your backend
+    console.log("Strategy Call Request:", values);
+    toast({
+      title: "Request Sent!",
+      description: "Our team will review your information and get back to you shortly.",
+    });
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="fullName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Full Name</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="workEmail"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Work Email</FormLabel>
+              <FormControl>
+                <Input placeholder="john.doe@company.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="companyDomain"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Company Domain</FormLabel>
+              <FormControl>
+                <Input placeholder="company.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="serviceOfInterest"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Service of Interest</FormLabel>
+              <FormControl>
+                <Input {...field} readOnly className="bg-muted" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="challenge"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Tell us about your project or challenge</FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="e.g., We're looking to reduce customer support costs while improving response times."
+                  className="resize-none"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full">Submit Request</Button>
+      </form>
+    </Form>
+  );
+};
+
 
 // This is a placeholder for your detailed service data.
 // In a real application, you would fetch this from a CMS or an API.
@@ -48,7 +180,7 @@ const serviceDetails: { [key: string]: any } = {
       ]
     }
   },
-  'basic-automation': {
+    'basic-automation': {
     title: "Basic Automation Services",
     description: "Streamline your repetitive back-office tasks and workflows with our intelligent Robotic Process Automation (RPA) solutions. We turn manual, error-prone processes into efficient, automated systems.",
     keyMetrics: [
@@ -134,264 +266,6 @@ const serviceDetails: { [key: string]: any } = {
       ]
     }
   },
-  'business-analytics': {
-    title: "Business Analytics",
-    description: "AI-powered insights and predictive analytics",
-    keyMetrics: [
-        { value: "80%", label: "Faster Data-Driven Decisions" },
-        { value: "45%", label: "Improved Forecast Accuracy" },
-        { value: "24/7", label: "Real-Time Insights" }
-    ],
-    implementationRoadmap: [
-        { week: "1", title: "Data Integration", description: "Connect all your data sources into a single, unified platform." },
-        { week: "2-3", title: "Model Training", description: "Our AI models are trained on your historical data to learn your business patterns." },
-        { week: "4", title: "Dashboard & Insights", description: "Launch of your real-time analytics dashboard with predictive insights." }
-    ],
-    clientPerspective: {
-      title: "For the Business Leader: Your AI Co-Pilot",
-      points: [
-        "**Predictive Forecasting:** Move beyond historical data and start predicting future trends, from sales to customer behavior.",
-        "**Actionable Insights:** Get clear, actionable recommendations to improve efficiency, reduce costs, and drive growth.",
-        "**Automated Reporting:** Eliminate manual report generation with automated, real-time dashboards.",
-        "**Enhanced Decision Making:** Make faster, more informed decisions based on comprehensive data analysis."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: The Data Science Engine",
-      points: [
-        "**Core Technology:** We use a combination of machine learning models, including time-series analysis, regression, and classification algorithms.",
-        "**Data Integration:** Our platform can connect to a wide range of data sources, including databases, APIs, and flat files.",
-        "**Real-time Processing:** We use a streaming data architecture to provide real-time analytics and insights.",
-        "**Customizable Dashboards:** Our dashboards are built with modern data visualization libraries and can be fully customized to your needs."
-      ]
-    },
-    caseStudy: {
-      client: "A Logistics Company",
-      challenge: "The company was struggling with inefficient routing and scheduling, leading to high fuel costs and delivery delays.",
-      solution: "We implemented an AI-powered analytics system that analyzed traffic patterns, weather conditions, and delivery schedules to optimize routes in real-time.",
-      results: [
-        "Reduced fuel costs by 20%.",
-        "Improved on-time delivery rates by 30%.",
-        "Increased the number of deliveries per driver by 15%.",
-        "Provided valuable insights into their supply chain, leading to further optimizations."
-      ]
-    }
-  },
-  'restaurant-automation': {
-    title: "Restaurant Automation",
-    description: "A complete AI-powered solution to streamline every aspect of your restaurant's operations, from ordering to inventory.",
-    keyMetrics: [
-        { value: "95%", label: "Increase in Order Accuracy" },
-        { value: "50%", label: "Reduction in Wait Times" },
-        { value: "30%", label: "Reduction in Food Waste" }
-    ],
-    implementationRoadmap: [
-        { week: "1", title: "On-site Assessment", description: "We analyze your current kitchen workflow, ordering process, and inventory management." },
-        { week: "2-3", title: "System Configuration", description: "We configure our AI platform to your specific menu, layout, and operational needs." },
-        { week: "4", title: "Staff Training & Go-Live", description: "We train your staff on the new system and oversee a smooth transition to your new AI-powered operation." }
-    ],
-    clientPerspective: {
-      title: "For the Restaurant Owner: The Perfectly Run Restaurant",
-      points: [
-        "**Streamlined Ordering:** Implement AI-powered ordering through QR codes, voice, or digital menus to eliminate errors and speed up service.",
-        "**Optimized Kitchen Flow:** Our system intelligently routes orders to the correct stations, ensuring food is prepared efficiently and delivered hot.",
-        "**Smart Inventory Management:** Reduce food waste and never run out of a key ingredient again with predictive inventory tracking and automated ordering.",
-        "**Enhanced Customer Experience:** Reduce wait times, improve order accuracy, and gather valuable feedback to keep your customers coming back."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: The Smart Restaurant Stack",
-      points: [
-        "**Core Technology:** A suite of integrated AI models for order processing (NLP), kitchen workflow optimization (reinforcement learning), and inventory forecasting (time-series analysis).",
-        "**POS Integration:** Seamlessly integrates with your existing Point of Sale (POS) system for a unified data stream.",
-        "**Real-time Dashboard:** A centralized dashboard provides a real-time overview of all restaurant operations, from order status to inventory levels.",
-        "**Customizable Modules:** Our platform is modular, allowing you to start with one aspect (like ordering) and add more capabilities as your needs grow."
-      ]
-    },
-    caseStudy: {
-      client: "A Fast-Casual Restaurant Chain",
-      challenge: "The chain was struggling with inconsistent service, high food waste, and long wait times during peak hours.",
-      solution: "We deployed our complete Restaurant Automation suite, including AI-powered ordering, a smart kitchen display system, and predictive inventory management.",
-      results: [
-        "Increased order accuracy to 99.5%.",
-        "Reduced average customer wait time by 50%.",
-        "Lowered food waste by 30%, significantly improving profit margins.",
-        "Improved staff efficiency and reduced stress in the kitchen."
-      ]
-    }
-  },
-  'marketing-automation': {
-    title: "Marketing Automation",
-    description: "AI-driven marketing campaigns and lead generation that deliver personalized experiences and maximize your ROI.",
-    keyMetrics: [
-        { value: "65%", label: "Increase in Conversion Rates" },
-        { value: "40%", label: "Reduction in Marketing Costs" },
-        { value: "24/7", label: "Lead Nurturing" }
-    ],
-    implementationRoadmap: [
-        { week: "1", title: "Strategy & Integration", description: "We define your target audience and integrate our platform with your existing marketing tools and CRM." },
-        { week: "2-3", title: "Campaign Setup & AI Training", description: "We set up your initial campaigns and train our AI on your brand voice and customer data." },
-        { week: "4", title: "Launch & Optimization", description: "We launch your first AI-powered campaigns and begin the continuous process of real-time optimization." }
-    ],
-    clientPerspective: {
-      title: "For the Marketer: Your Unfair Advantage",
-      points: [
-        "**Hyper-Personalization at Scale:** Deliver unique, personalized messages and offers to every single lead, automatically.",
-        "**Intelligent Lead Scoring:** Our AI analyzes lead behavior to identify your hottest prospects, so your sales team can focus on closing deals.",
-        "**Automated Content Creation:** Generate high-quality, on-brand marketing copy, social media posts, and ad variations in seconds.",
-        "**Predictive Campaign Optimization:** Our platform automatically adjusts your campaigns in real-time to maximize performance and ROI."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: The Modern Marketing Stack",
-      points: [
-        "**Core Technology:** A combination of Generative AI for content creation, predictive analytics for lead scoring, and reinforcement learning for campaign optimization.",
-        "**CRM & Ad Platform Integration:** Seamlessly integrates with major CRMs (Salesforce, HubSpot) and ad platforms (Google, Facebook) via their APIs.",
-        "**Real-time Data Processing:** Our system processes user interactions in real-time to update lead scores and adjust campaign parameters on the fly.",
-        "**A/B/n Testing:** Go beyond simple A/B testing. Our AI can test thousands of variations of a campaign simultaneously to find the optimal combination."
-      ]
-    },
-    caseStudy: {
-      client: "A B2B Software Company",
-      challenge: "The company was generating a high volume of leads, but their sales team was struggling to identify the most promising ones, leading to wasted effort and missed opportunities.",
-      solution: "We implemented our Marketing Automation platform with a focus on AI-powered lead scoring and personalized email nurturing campaigns.",
-      results: [
-        "Increased sales-qualified leads by 50%.",
-        "Reduced the sales cycle by 30%.",
-        "Increased email open rates by 40% due to hyper-personalization.",
-        "Allowed the sales team to focus on a smaller, more qualified pool of leads, leading to a higher closing rate."
-      ]
-    }
-  },
-  'real-estate-ai-suite': {
-    title: "Real Estate AI Suite",
-    description: "A comprehensive AI-powered platform designed to help real estate professionals close more deals, faster.",
-    keyMetrics: [
-        { value: "85%", label: "Faster Lead Qualification" },
-        { value: "30%", label: "Increase in Closing Rates" },
-        { value: "24/7", label: "Client Communication" }
-    ],
-    implementationRoadmap: [
-        { week: "1", title: "Integration & Data Sync", description: "We connect our platform to your MLS, CRM, and website to create a unified data source." },
-        { week: "2-3", title: "AI Agent Training", description: "We train your custom AI agent on your listings, local market data, and your unique communication style." },
-        { week: "4", title: "Launch & Go-Live", description: "We launch your AI agent on your website and begin automating your lead follow-up and qualification process." }
-    ],
-    clientPerspective: {
-      title: "For the Real Estate Professional: Your AI Assistant",
-      points: [
-        "**Automated Lead Qualification:** Our AI agent engages with every new lead 24/7, asks qualifying questions, and schedules appointments, so you only spend time on serious buyers and sellers.",
-        "**Smart Property Matching:** Go beyond basic filters. Our AI understands lifestyle needs and preferences to suggest the perfect properties to your clients.",
-        "**AI-Powered Marketing:** Automatically generate compelling property descriptions, social media posts, and ad copy for your listings.",
-        "**Predictive Market Analysis:** Get AI-powered insights into market trends and pricing to better advise your clients and close deals faster."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: The Smart Real Estate Platform",
-      points: [
-        "**Core Technology:** A suite of AI models including a conversational AI for lead engagement, a recommendation engine for property matching, and a predictive analytics model for market analysis.",
-        "**MLS & CRM Integration:** We have pre-built integrations with major MLS and CRM platforms to ensure a seamless flow of data.",
-        "**Natural Language Processing (NLP):** Our AI can understand and respond to complex, conversational inquiries from potential clients.",
-        "**Data-Driven Insights:** We leverage a wide range of data sources, including property data, market trends, and demographic information, to power our AI models."
-      ]
-    },
-    caseStudy: {
-      client: "A High-Producing Real Estate Team",
-      challenge: "The team was overwhelmed with inbound leads and was struggling to respond to them all in a timely manner, leading to missed opportunities.",
-      solution: "We implemented our Real Estate AI Suite, with a focus on the AI-powered lead qualification and appointment setting features.",
-      results: [
-        "Automated the initial follow-up for 100% of new leads.",
-        "Increased the number of qualified appointments set by 40%.",
-        "Reduced the time agents spent on lead qualification by 85%.",
-        "Freed up the team to focus on high-value activities like negotiations and client relationships, leading to a 30% increase in closed deals."
-      ]
-    }
-  },
-  'full-stack-development': {
-    title: "AI-Native Full Stack Development",
-    description: "We don't just build websites and applications; we build intelligent, AI-powered digital experiences that are designed to evolve and adapt.",
-    keyMetrics: [
-        { value: "70%", label: "Faster Development Cycles" },
-        { value: "80%", label: "Reduction in Bugs" },
-        { value: "100%", label: "AI-Ready Architecture" }
-    ],
-    implementationRoadmap: [
-        { week: "1-2", title: "Discovery & Architecture", description: "We work with you to define your product vision and design an AI-native architecture that is scalable and future-proof." },
-        { week: "3-6", title: "Agile Development Sprints", description: "Our team builds your application in two-week sprints, with a focus on rapid iteration and continuous feedback." },
-        { week: "7-8", title: "AI Integration & Deployment", description: "We integrate the core AI features and deploy your application to a scalable, cloud-native environment." }
-    ],
-    clientPerspective: {
-      title: "For the Visionary: Your Product, Supercharged",
-      points: [
-        "**AI at the Core:** We build your application with AI in mind from day one, enabling features like personalization, recommendation engines, and intelligent automation.",
-        "**Faster Time to Market:** Our AI-assisted development process and modern tech stack allow us to build and launch your product up to 70% faster than traditional agencies.",
-        "**Scalable & Future-Proof:** We build on a modern, serverless architecture that can scale to millions of users without compromising performance.",
-        "**A True Technology Partner:** We don't just build and leave. We provide ongoing support and strategic guidance to ensure your product continues to evolve and succeed."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: A Modern, AI-First Stack",
-      points: [
-        "**Core Technology:** We leverage the latest frameworks and technologies, including React/Next.js for the frontend, Node.js/Python for the backend, and a serverless architecture.",
-        "**AI-Assisted Development:** Our developers use AI-powered tools for code generation, bug detection, and automated testing, dramatically accelerating the development process.",
-        "**Scalable Backend:** We build on serverless platforms like Supabase and Vercel, ensuring your application is scalable, secure, and cost-effective.",
-        "**Continuous Integration & Deployment (CI/CD):** We implement a robust CI/CD pipeline to automate the testing and deployment process, ensuring rapid and reliable releases."
-      ]
-    },
-    caseStudy: {
-      client: "A Tech Startup",
-      challenge: "The startup had a brilliant idea for an AI-powered platform but lacked the technical expertise to build it.",
-      solution: "We served as their end-to-end development partner, taking their concept from idea to a fully functional, scalable product in just eight weeks.",
-      results: [
-        "Launched their MVP 70% faster than their initial projections.",
-        "Built a secure and scalable platform that could handle their rapid user growth.",
-        "Provided the technical credibility they needed to secure their first round of funding.",
-        "Continue to serve as their long-term technology partner, providing ongoing development and support."
-      ]
-    }
-  },
-  'ai-social-media-content': {
-    title: "AI Social Media Content",
-    description: "Automated content creation and social media management",
-    keyMetrics: [
-        { value: "120%", label: "Increase in Engagement" },
-        { value: "20+", label: "Hours Saved Weekly" },
-        { value: "100%", label: "Brand Voice Consistency" }
-    ],
-    implementationRoadmap: [
-        { week: "1", title: "Brand Voice Analysis", description: "Our AI analyzes your existing content to learn your unique brand voice, tone, and style." },
-        { week: "2", title: "Content Strategy & Setup", description: "We work with you to develop a content strategy and set up your automated posting schedule." },
-        { week: "3", title: "Content Generation & Launch", description: "Our AI begins generating and scheduling high-quality, on-brand content for your social media channels." }
-    ],
-    clientPerspective: {
-      title: "For the Brand Builder: Your Never-Ending Content Machine",
-      points: [
-        "**Consistent, High-Quality Content:** Never worry about what to post again. Our AI generates a steady stream of engaging, on-brand content for your social media channels.",
-        "**Save Time & Resources:** Free up your team from the time-consuming task of content creation and focus on higher-level strategy.",
-        "**Boost Engagement:** Our AI analyzes what content resonates with your audience and automatically creates more of it, leading to a significant increase in likes, comments, and shares.",
-        "**Maintain a Cohesive Brand Voice:** Ensure every post is perfectly aligned with your brand's tone and style, no matter who is managing your social media."
-      ]
-    },
-    teacherPerspective: {
-      title: "For the Technologist: The Content Generation Engine",
-      points: [
-        "**Core Technology:** We use a fine-tuned Generative AI model that has been trained on a massive dataset of high-performing social media content.",
-        "**Brand Voice Cloning:** Our platform can learn and replicate your unique brand voice from just a few examples of your existing content.",
-        "**Platform-Specific Optimization:** The AI automatically adapts the content for each social media platform, ensuring it is optimized for the unique format and audience of each.",
-        "**Engagement Analytics:** We track the performance of every post and use that data to continuously improve the AI's content generation capabilities."
-      ]
-    },
-    caseStudy: {
-      client: "A Fast-Growing D2C Brand",
-      challenge: "The brand was struggling to keep up with the demands of social media and their content was inconsistent and not driving engagement.",
-      solution: "We implemented our AI Social Media Content platform, training the AI on their brand guidelines and top-performing posts.",
-      results: [
-        "Increased their social media engagement by 120% in the first three months.",
-        "Saved their marketing team over 20 hours per week on content creation.",
-        "Established a consistent and recognizable brand voice across all their social media channels.",
-        "Grew their follower count by 40% in six months due to the consistent, high-quality content."
-      ]
-    }
-  },
 };
 
 const ServiceDetail = () => {
@@ -435,9 +309,7 @@ const ServiceDetail = () => {
               <div className="space-y-4">
                 {service.clientPerspective.points.map((point: string, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
                   </div>
                 ))}
@@ -450,9 +322,7 @@ const ServiceDetail = () => {
               <div className="space-y-4">
                 {service.teacherPerspective.points.map((point: string, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                      <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
                   </div>
                 ))}
@@ -526,21 +396,25 @@ const ServiceDetail = () => {
           {/* CTA */}
           <div className="text-center mt-16">
             <h3 className="text-2xl font-bold text-white mb-6">Ready to implement this solution?</h3>
-            <div className="flex justify-center items-center gap-4">
+            <Dialog>
+              <DialogTrigger asChild>
                 <Button 
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
-                  onClick={() => window.open('mailto:contact@neural-ai.com', '_blank')}
                 >
                   Book a Strategy Call
                 </Button>
-                <Button 
-                  size="lg"
-                  variant="outline"
-                >
-                  See a Live Demo
-                </Button>
-            </div>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Book a Strategy Call</DialogTitle>
+                  <DialogDescription>
+                    Fill out the form below and our team will get back to you to schedule your call.
+                  </DialogDescription>
+                </DialogHeader>
+                <StrategyCallForm serviceTitle={service.title} />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </main>
