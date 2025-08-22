@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { StrategyCallForm } from "@/components/StrategyCallForm"; // Import the new component
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,13 +58,25 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <Button 
-            variant="default"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
-            onClick={() => window.open('mailto:office@neuralai.in', '_blank')}
-          >
-            Book a Call
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button 
+                variant="default"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
+              >
+                Book a Call
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Book a Strategy Call</DialogTitle>
+                <DialogDescription>
+                  Fill out the form below and our team will get back to you to schedule your call.
+                </DialogDescription>
+              </DialogHeader>
+              <StrategyCallForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </nav>
