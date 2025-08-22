@@ -8,14 +8,24 @@ const serviceDetails: { [key: string]: any } = {
   'ai-calling-agent': {
     title: "AI Calling Agent (Contact Center 2.0)",
     description: "Our AI Calling Agent provides intelligent, 24/7 voice automation for your customer service and sales operations, delivering natural, human-like conversations that enhance customer satisfaction and dramatically reduce operational costs.",
-    features: [
-      "Real-time, natural language conversations",
-      "Integration with existing CRM and databases",
-      "Advanced sentiment analysis to gauge customer mood",
-      "Automated call logging and summarization",
-      "Scales instantly to handle unlimited call volume",
-      "Customizable voice cloning to match your brand's tone"
-    ],
+    clientPerspective: {
+      title: "For the Business Leader: A 24/7, Superhuman Support Team",
+      points: [
+        "**Slash Operational Costs:** Reduce overhead by automating up to 80% of inbound and outbound calls, freeing up human agents for high-value interactions.",
+        "**Boost Sales & Lead Conversion:** Qualify leads, book appointments, and even close sales around the clock, ensuring you never miss an opportunity.",
+        "**Enhance Customer Satisfaction:** Eliminate wait times and provide instant, consistent, and accurate support in any language, at any time.",
+        "**Gain Actionable Insights:** Turn every conversation into data. Our AI analyzes sentiment, identifies trends, and provides you with a real-time pulse on your customer base."
+      ]
+    },
+    teacherPerspective: {
+      title: "For the Technologist: The Architecture of Conversation",
+      points: [
+        "**Core Technology:** Built on a foundation of fine-tuned Large Language Models (LLMs) like GPT-4, combined with proprietary speech-to-text and text-to-speech engines for ultra-low latency.",
+        "**Voice Cloning & TTS:** We utilize advanced text-to-speech (TTS) models that can be cloned from a 30-second audio sample to perfectly match your brand's voice.",
+        "**Real-time Interruption Handling:** Our system is designed to handle natural conversation flow, allowing users to interrupt, ask questions, and change topics without breaking the experience.",
+        "**Seamless API Integration:** The agent integrates directly with your existing CRM (like Salesforce, HubSpot) and internal databases via REST APIs to pull customer data and push call logs and outcomes automatically."
+      ]
+    },
     caseStudy: {
       client: "Global E-commerce Leader",
       challenge: "High call volumes during peak seasons led to long wait times and customer churn. Scaling the human team was expensive and inefficient.",
@@ -28,9 +38,72 @@ const serviceDetails: { [key: string]: any } = {
       ]
     }
   },
-  // You can add details for other services here following the same structure.
-  // 'basic-automation': { ... },
-  // 'cctv-ai-monitoring': { ... },
+  'basic-automation': {
+    title: "Basic Automation Services",
+    description: "Streamline your repetitive back-office tasks and workflows with our intelligent Robotic Process Automation (RPA) solutions. We turn manual, error-prone processes into efficient, automated systems.",
+    clientPerspective: {
+      title: "For the Business Leader: Reclaim Your Team's Time",
+      points: [
+        "**Boost Productivity:** Liberate your employees from tedious tasks like data entry, report generation, and invoice processing. We've found that our solutions save an average of 15+ hours per employee, per week.",
+        "**Eliminate Human Error:** Achieve near-100% accuracy in your processes, reducing costly mistakes and ensuring data integrity.",
+        "**Improve Scalability:** Handle a 10x workload without a corresponding increase in headcount. Our AI bots work 24/7 without fatigue.",
+        "**Enhance Compliance:** Automate regulatory checks and audit trails to ensure your business operations are always compliant."
+      ]
+    },
+    teacherPerspective: {
+      title: "For the Technologist: Building Your Digital Workforce",
+      points: [
+        "**Core Technology:** We utilize a combination of established RPA platforms and custom Python scripts to create resilient and efficient bots.",
+        "**Intelligent Document Processing (IDP):** Our bots can read and understand unstructured documents like invoices and contracts using Optical Character Recognition (OCR) and Natural Language Processing (NLP).",
+        "**API & UI Integration:** We build automations that can interact with applications at both the API level (for speed and stability) and the UI level (for legacy systems).",
+        "**No-Code Workflow Builder:** We provide a user-friendly, no-code interface that allows your team to design and deploy their own simple automations without technical expertise."
+      ]
+    },
+    caseStudy: {
+      client: "Regional Accounting Firm",
+      challenge: "The firm was spending hundreds of hours per month manually transferring data from client bookkeeping software to their internal tax preparation systems.",
+      solution: "We developed a suite of RPA bots that could securely log into various client systems, extract the necessary financial data, and accurately populate the firm's tax software.",
+      results: [
+        "Reduced manual data entry time by 95%.",
+        "Eliminated data transfer errors, saving significant time during tax season.",
+        "Allowed accountants to focus on high-value advisory services instead of data entry.",
+        "Improved employee satisfaction and reduced burnout."
+      ]
+    }
+  },
+  'cctv-ai-monitoring': {
+    title: "CCTV AI Monitoring",
+    description: "Transform your standard surveillance system into a proactive, intelligent security and operations tool. Our AI analyzes your camera feeds in real-time to detect threats, monitor compliance, and provide valuable business insights.",
+    clientPerspective: {
+      title: "For the Business Leader: Eyes Everywhere, All the Time",
+      points: [
+        "**Proactive Threat Detection:** Receive instant alerts for security events like unauthorized access, theft, or unusual behavior, allowing you to act before it's too late.",
+        "**Automated Compliance:** Ensure safety and operational protocols are being followed, from verifying hard-hat usage on a construction site to monitoring hand-washing in a restaurant.",
+        "**Optimize Your Space:** Use heatmap and foot-traffic analysis to understand customer behavior, optimize store layouts, and improve product placement.",
+        "**Reduce Monitoring Costs:** Drastically reduce the need for human security personnel to constantly watch live feeds, while increasing the effectiveness of your surveillance."
+      ]
+    },
+    teacherPerspective: {
+      title: "For the Technologist: Seeing the World in Data",
+      points: [
+        "**Core Technology:** We use state-of-the-art Convolutional Neural Networks (CNNs), specifically models like YOLO (You Only Look Once) for real-time object detection and classification.",
+        "**Emotion & Behavior Analysis:** Our system can be trained to recognize specific actions or even gauge crowd sentiment by analyzing facial expressions and body language.",
+        "**Edge & Cloud Processing:** Depending on your needs, we can deploy models directly on-site (on the edge) for low-latency alerts or process feeds in the cloud for more complex, large-scale analysis.",
+        "**Custom Model Training:** We can fine-tune our models on your specific data to recognize unique objects, actions, or compliance requirements relevant to your business."
+      ]
+    },
+    caseStudy: {
+      client: "A Chain of Retail Stores",
+      challenge: "The client was experiencing significant losses due to shoplifting and was struggling to optimize the layout of their new stores.",
+      solution: "We integrated our AI Monitoring system with their existing CCTV network. The AI was trained to detect suspicious behavior patterns and generate real-time alerts for staff. It also provided detailed heatmap analytics of customer movement.",
+      results: [
+        "Reduced shoplifting incidents by 70% in the first six months.",
+        "Increased sales by 15% in redesigned stores based on heatmap data.",
+        "Identified and resolved a recurring safety hazard by detecting non-compliance with a storage protocol.",
+        "Reduced the need for a dedicated, round-the-clock security monitoring team."
+      ]
+    }
+  },
 };
 
 const ServiceDetail = () => {
@@ -57,21 +130,36 @@ const ServiceDetail = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{service.description}</p>
           </div>
 
-          {/* Core Features */}
-          <div className="bg-neural-dark p-8 rounded-xl border border-border mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Core Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {service.features.map((feature: string, index: number) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-lg text-zinc-300">{feature}</span>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Client Perspective */}
+            <div className="bg-neural-dark p-8 rounded-xl border border-border">
+              <h2 className="text-3xl font-bold text-white mb-6">{service.clientPerspective.title}</h2>
+              <div className="space-y-4">
+                {service.clientPerspective.points.map((point: string, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Teacher Perspective */}
+            <div className="bg-neural-dark p-8 rounded-xl border border-border">
+              <h2 className="text-3xl font-bold text-white mb-6">{service.teacherPerspective.title}</h2>
+              <div className="space-y-4">
+                {service.teacherPerspective.points.map((point: string, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                     <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Case Study Section */}
-          <div className="bg-card border border-border rounded-xl p-8">
+          <div className="bg-card border border-border rounded-xl p-8 mt-12">
             <h2 className="text-3xl font-bold text-white mb-2">Real-World Impact: A Case Study</h2>
             <p className="text-muted-foreground mb-6">Client: {service.caseStudy.client}</p>
 
