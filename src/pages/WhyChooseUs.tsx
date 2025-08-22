@@ -27,44 +27,84 @@ const WhyChooseUs = () => {
   const differentiators = [
     {
       title: "Unified Ecosystem",
-      description: "One platform, infinite possibilities. Our integrated AI solutions work seamlessly together, creating synergies that amplify results across your entire business.",
+      description: "Our integrated AI solutions work seamlessly together, creating synergies that amplify results across your entire business.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"/></svg>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-unified" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="6" cy="6" r="2" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="18" cy="18" r="2" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="6" cy="18" r="2" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="18" cy="6" r="2" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M8 6H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M6 8V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M18 8V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M8 18H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+        </div>
       )
     },
     {
       title: "Action-Oriented AI",
-      description: "We don't just analyze – we act. Our AI systems are designed to take immediate, intelligent action based on real-time data and insights.",
+      description: "We don't just analyze – we act. Our AI systems are designed to take immediate, intelligent action based on real-time data.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-action" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        </div>
       )
     },
     {
       title: "Industry Expertise",
-      description: "Deep domain knowledge across multiple industries allows us to deliver solutions that understand your specific challenges and opportunities.",
+      description: "Deep domain knowledge allows us to deliver solutions that understand your specific challenges and opportunities.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-expertise" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5"/>
+                <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+        </div>
       )
     },
     {
       title: "Rapid Deployment",
-      description: "From concept to implementation in weeks, not months. Our proven frameworks and methodologies ensure quick time-to-value.",
+      description: "From concept to implementation in weeks, not months. Our proven frameworks ensure quick time-to-value.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.05-3.11.66-1.03 1.11-2.24 1.11-3.49a7 7 0 0 0-14 0c0 1.25.45 2.46 1.11 3.49-.65.81-.66 2.27.05 3.11Z"/><path d="m12 15-3-3a9 9 0 0 0-3 13.5 9 9 0 0 0 13.5-3l-3-3Z"/></svg>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-deployment" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 15.5C4 15.5 5.5 12 12 12C18.5 12 20 15.5 20 15.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 8V12L12 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 5L12 2L15 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        </div>
       )
     },
     {
       title: "Continuous Evolution",
-      description: "Your AI solutions learn and improve constantly. We provide ongoing optimization to ensure peak performance and adaptation to changing needs.",
+      description: "Your AI solutions learn and improve constantly. We provide ongoing optimization to ensure peak performance.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M21 21v-5h-5"/></svg>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-evolution" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.5 2v6h-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2.5 22v-6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 11.5a10 10 0 0 1 18.2-3.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M22 12.5a10 10 0 0 1-18.2 3.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        </div>
       )
     },
     {
       title: "Premium Support",
-      description: "White-glove service with dedicated AI specialists. Get expert guidance, priority support, and strategic consultation whenever you need it.",
+      description: "White-glove service with dedicated AI specialists. Get expert guidance, priority support, and strategic consultation.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"/><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 12v-2a2 2 0 0 1 2-2h2"/></svg>
+        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
+            <svg className="w-7 h-7 icon-support" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9.08984 15.14L15.3498 8.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15.3498 15.14L9.08984 8.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        </div>
       )
     }
   ];
@@ -75,8 +115,8 @@ const WhyChooseUs = () => {
       <main className="pt-24 pb-12 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16 reveal">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Why Choose neural AI?
+            <h1 className="font-zen-dots text-4xl sm:text-5xl md:text-6xl tracking-wider leading-none mb-6">
+              <span className="neural-text">Why Choose </span><span className="text-white">neural AI?</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We're not just another AI company. We're your strategic partner in 
@@ -87,9 +127,7 @@ const WhyChooseUs = () => {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
             {differentiators.map((item, index) => (
               <div key={index} className="neural-card reveal">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
-                  {item.icon}
-                </div>
+                {item.icon}
                 <h3 className="text-xl font-semibold text-primary mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </div>
