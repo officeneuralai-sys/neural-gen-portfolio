@@ -115,8 +115,10 @@ const WhyChooseUs = () => {
       <main className="pt-24 pb-12 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16 reveal">
-            <h1 className="font-zen-dots text-4xl sm:text-5xl md:text-6xl tracking-wider leading-none mb-6">
-              <span className="neural-text">Why Choose </span><span className="text-white">neural AI?</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl tracking-wider leading-none mb-6">
+              <span className="font-normal">Why Choose </span>
+              <span className="font-zen-dots neural-text">neural</span>
+              <span className="font-zen-dots text-white"> AI?</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We're not just another AI company. We're your strategic partner in 
