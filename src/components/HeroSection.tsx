@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section id="home" className="hero-section">
       <NeuralBackground />
       <div className="hero-content">
-        <h1 className="font-zendots text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-wider leading-none">
+        <h1 className="font-zen-dots text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-wider leading-none">
             <span className="neural-text">neural</span><span className="text-white"> AI</span>
         </h1>
       </div>
