@@ -8,6 +8,16 @@ const serviceDetails: { [key: string]: any } = {
   'ai-calling-agent': {
     title: "AI Calling Agent (Contact Center 2.0)",
     description: "Our AI Calling Agent provides intelligent, 24/7 voice automation for your customer service and sales operations, delivering natural, human-like conversations that enhance customer satisfaction and dramatically reduce operational costs.",
+    keyMetrics: [
+        { value: "60%", label: "Reduction in Call Handling Costs" },
+        { value: "40%", label: "Increase in Customer Satisfaction" },
+        { value: "24/7", label: "Operational Availability" }
+    ],
+    implementationRoadmap: [
+        { week: "1", title: "Discovery & Voice Cloning", description: "We analyze your existing call logs and clone your brand's voice from a 30-second audio sample." },
+        { week: "2-3", title: "AI Training & Integration", description: "The AI agent is trained on your specific use cases and integrated with your CRM and databases." },
+        { week: "4", title: "Pilot Program & Launch", description: "We launch a pilot program to handle a portion of your calls, gather data, and make final optimizations before a full rollout." }
+    ],
     clientPerspective: {
       title: "For the Business Leader: A 24/7, Superhuman Support Team",
       points: [
@@ -38,9 +48,19 @@ const serviceDetails: { [key: string]: any } = {
       ]
     }
   },
-  'basic-automation': {
+    'basic-automation': {
     title: "Basic Automation Services",
     description: "Streamline your repetitive back-office tasks and workflows with our intelligent Robotic Process Automation (RPA) solutions. We turn manual, error-prone processes into efficient, automated systems.",
+    keyMetrics: [
+        { value: "99%", label: "Reduction in Manual Errors" },
+        { value: "15+", label: "Hours Saved Weekly Per Employee" },
+        { value: "10x", label: "Scalability of Operations" }
+    ],
+    implementationRoadmap: [
+        { week: "1", title: "Process Audit", description: "Our team works with you to identify the most impactful and feasible processes for automation." },
+        { week: "2-3", title: "Bot Development", description: "We develop, test, and refine the custom RPA bots for your specific workflows." },
+        { week: "4", title: "Deployment & Training", description: "We deploy the bots into your live environment and train your team on how to manage and monitor them." }
+    ],
     clientPerspective: {
       title: "For the Business Leader: Reclaim Your Team's Time",
       points: [
@@ -74,6 +94,16 @@ const serviceDetails: { [key: string]: any } = {
   'cctv-ai-monitoring': {
     title: "CCTV AI Monitoring",
     description: "Transform your standard surveillance system into a proactive, intelligent security and operations tool. Our AI analyzes your camera feeds in real-time to detect threats, monitor compliance, and provide valuable business insights.",
+    keyMetrics: [
+        { value: "300%", label: "Faster Threat Detection" },
+        { value: "70%", label: "Reduction in Security Incidents" },
+        { value: "24/7", label: "Automated Monitoring" }
+    ],
+    implementationRoadmap: [
+        { week: "1", title: "System Integration", description: "We integrate our AI platform with your existing CCTV infrastructure, whether on-premise or cloud-based." },
+        { week: "2-3", title: "Custom Model Training", description: "We fine-tune our computer vision models to recognize the specific objects, behaviors, and compliance rules relevant to your business." },
+        { week: "4", title: "Dashboard & Alert Setup", description: "We configure your custom dashboard for analytics and set up the real-time alerting system for your security team." }
+    ],
     clientPerspective: {
       title: "For the Business Leader: Eyes Everywhere, All the Time",
       points: [
@@ -129,6 +159,16 @@ const ServiceDetail = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4">{service.title}</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{service.description}</p>
           </div>
+          
+          {/* Key Metrics Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
+            {service.keyMetrics.map((metric: any, index: number) => (
+                <div key={index} className="bg-card border border-border p-6 rounded-lg">
+                    <p className="text-5xl font-bold text-primary">{metric.value}</p>
+                    <p className="text-muted-foreground mt-2">{metric.label}</p>
+                </div>
+            ))}
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Client Perspective */}
@@ -137,7 +177,9 @@ const ServiceDetail = () => {
               <div className="space-y-4">
                 {service.clientPerspective.points.map((point: string, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                     <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
                   </div>
                 ))}
@@ -150,16 +192,56 @@ const ServiceDetail = () => {
               <div className="space-y-4">
                 {service.teacherPerspective.points.map((point: string, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                      <p className="text-lg text-zinc-300" dangerouslySetInnerHTML={{ __html: point }} />
                   </div>
                 ))}
               </div>
             </div>
           </div>
+            
+          {/* Implementation Roadmap */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-center text-white mb-10">Your Path to Implementation</h2>
+            <div className="relative">
+                {/* Dotted Line */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-5 bottom-5 w-0.5 bg-border border-l-2 border-dashed border-zinc-700"></div>
+
+                <div className="space-y-12">
+                {service.implementationRoadmap.map((step: any, index: number) => (
+                    <div key={index} className="flex items-center justify-center relative">
+                        <div className="w-1/2 flex justify-end pr-8 text-right">
+                           {index % 2 === 0 && (
+                                <div className="bg-card border border-border p-6 rounded-lg max-w-sm">
+                                    <h4 className="font-bold text-primary text-xl mb-2">Week {step.week}</h4>
+                                    <h5 className="font-semibold text-white mb-2">{step.title}</h5>
+                                    <p className="text-muted-foreground text-sm">{step.description}</p>
+                                </div>
+                           )}
+                        </div>
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center z-10 text-primary-foreground font-bold text-lg">
+                           {index + 1}
+                        </div>
+                        <div className="w-1/2 flex justify-start pl-8">
+                           {index % 2 !== 0 && (
+                               <div className="bg-card border border-border p-6 rounded-lg max-w-sm">
+                                    <h4 className="font-bold text-primary text-xl mb-2">Week {step.week}</h4>
+                                    <h5 className="font-semibold text-white mb-2">{step.title}</h5>
+                                    <p className="text-muted-foreground text-sm">{step.description}</p>
+                                </div>
+                           )}
+                        </div>
+                    </div>
+                ))}
+                </div>
+            </div>
+        </div>
+
 
           {/* Case Study Section */}
-          <div className="bg-card border border-border rounded-xl p-8 mt-12">
+          <div className="bg-card border border-border rounded-xl p-8 mt-16">
             <h2 className="text-3xl font-bold text-white mb-2">Real-World Impact: A Case Study</h2>
             <p className="text-muted-foreground mb-6">Client: {service.caseStudy.client}</p>
 
@@ -185,14 +267,22 @@ const ServiceDetail = () => {
             
           {/* CTA */}
           <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to implement this solution?</h3>
-            <Button 
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
-              onClick={() => window.open('mailto:contact@neural-ai.com', '_blank')}
-            >
-              Book a Strategy Call
-            </Button>
+            <h3 className="text-2xl font-bold text-white mb-6">Ready to implement this solution?</h3>
+            <div className="flex justify-center items-center gap-4">
+                <Button 
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow"
+                  onClick={() => window.open('mailto:contact@neural-ai.com', '_blank')}
+                >
+                  Book a Strategy Call
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                >
+                  See a Live Demo
+                </Button>
+            </div>
           </div>
         </div>
       </main>
