@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
 const ServicesSection = () => {
   const services = [
     {
+      id: "ai-calling-agent",
       title: "AI Calling Agent",
       description: "Intelligent voice automation for customer service and sales",
       traditional: "Manual call handling, long wait times, inconsistent service quality",
@@ -8,6 +12,7 @@ const ServicesSection = () => {
       impact: "Reduce call handling costs by 60% • Increase customer satisfaction by 40%"
     },
     {
+      id: "basic-automation",
       title: "Basic Automation",
       description: "Streamline repetitive tasks and workflows",
       traditional: "Manual data entry, repetitive tasks, human errors, time waste",
@@ -15,6 +20,7 @@ const ServicesSection = () => {
       impact: "Save 15+ hours weekly • Eliminate 99% of manual errors"
     },
     {
+      id: "cctv-ai-monitoring",
       title: "CCTV AI Monitoring",
       description: "Intelligent surveillance with real-time threat detection",
       traditional: "Human monitors, missed incidents, delayed responses, fatigue errors",
@@ -22,6 +28,7 @@ const ServicesSection = () => {
       impact: "Detect threats 300% faster • Reduce security incidents by 70%"
     },
     {
+      id: "business-analytics",
       title: "Business Analytics",
       description: "AI-powered insights and predictive analytics",
       traditional: "Manual reporting, delayed insights, guesswork decisions",
@@ -29,6 +36,7 @@ const ServicesSection = () => {
       impact: "Make data-driven decisions 80% faster • Improve forecast accuracy by 45%"
     },
     {
+      id: "restaurant-automation",
       title: "Restaurant Automation",
       description: "Complete AI solution for restaurant operations",
       traditional: "Manual orders, kitchen delays, inventory guesswork, poor coordination",
@@ -36,6 +44,7 @@ const ServicesSection = () => {
       impact: "Increase order accuracy by 95% • Reduce wait times by 50%"
     },
     {
+      id: "marketing-automation",
       title: "Marketing Automation",
       description: "AI-driven marketing campaigns and lead generation",
       traditional: "Generic campaigns, manual targeting, poor ROI tracking",
@@ -43,6 +52,7 @@ const ServicesSection = () => {
       impact: "Increase conversion rates by 65% • Reduce marketing costs by 40%"
     },
     {
+      id: "real-estate-ai-suite",
       title: "Real Estate AI Suite",
       description: "Complete AI solution for real estate professionals",
       traditional: "Manual lead qualification, generic property matching, slow responses",
@@ -50,6 +60,7 @@ const ServicesSection = () => {
       impact: "Qualify leads 85% faster • Increase closing rates by 30%"
     },
     {
+      id: "full-stack-development",
       title: "Full Stack Development",
       description: "AI-enhanced development with modern frameworks",
       traditional: "Slow development cycles, manual coding, frequent bugs",
@@ -57,6 +68,7 @@ const ServicesSection = () => {
       impact: "Accelerate development by 70% • Reduce bugs by 80%"
     },
     {
+      id: "ai-social-media-content",
       title: "AI Social Media Content",
       description: "Automated content creation and social media management",
       traditional: "Manual content creation, inconsistent posting, poor engagement",
@@ -68,25 +80,32 @@ const ServicesSection = () => {
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {services.map((service, index) => (
-        <div key={index} className="neural-card reveal">
-          <h3 className="text-xl font-semibold text-primary mb-3">{service.title}</h3>
-          <p className="text-muted-foreground mb-6">{service.description}</p>
-          
-          <div className="space-y-4">
-            <div>
-              <h4 className="text-sm font-medium text-destructive mb-2">Traditional Approach:</h4>
-              <p className="text-sm text-muted-foreground">{service.traditional}</p>
-            </div>
+        <div key={index} className="neural-card reveal flex flex-col">
+          <div className="flex-grow">
+            <h3 className="text-xl font-semibold text-primary mb-3">{service.title}</h3>
+            <p className="text-muted-foreground mb-6">{service.description}</p>
             
-            <div>
-              <h4 className="text-sm font-medium text-primary mb-2">AI Solution:</h4>
-              <p className="text-sm text-foreground">{service.aiSolution}</p>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-sm font-medium text-destructive mb-2">Traditional Approach:</h4>
+                <p className="text-sm text-muted-foreground">{service.traditional}</p>
+              </div>
+              
+              <div>
+                <h4 className="text-sm font-medium text-primary mb-2">AI Solution:</h4>
+                <p className="text-sm text-foreground">{service.aiSolution}</p>
+              </div>
+              
+              <div className="bg-primary/10 p-3 rounded-lg border border-primary/20">
+                <h4 className="text-sm font-medium text-primary mb-1">Impact Snapshot:</h4>
+                <p className="text-sm text-foreground">{service.impact}</p>
+              </div>
             </div>
-            
-            <div className="bg-primary/10 p-3 rounded-lg border border-primary/20">
-              <h4 className="text-sm font-medium text-primary mb-1">Impact Snapshot:</h4>
-              <p className="text-sm text-foreground">{service.impact}</p>
-            </div>
+          </div>
+          <div className="mt-6">
+            <Link to={`/services/${service.id}`}>
+              <Button variant="outline" className="w-full">Learn More</Button>
+            </Link>
           </div>
         </div>
       ))}
