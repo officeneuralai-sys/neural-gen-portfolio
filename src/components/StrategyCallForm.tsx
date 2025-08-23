@@ -77,7 +77,7 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
             <FormItem>
               <FormLabel>Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -90,7 +90,7 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
             <FormItem>
               <FormLabel>Work Email</FormLabel>
               <FormControl>
-                <Input placeholder="john.doe@company.com" {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,7 +103,7 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder="(123) 456-7890" {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
