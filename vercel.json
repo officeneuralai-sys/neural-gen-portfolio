@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!api|assets|Screenshot_22-8-2025_21853_.jpeg|build-worlds.jpg|favicon.ico|robots.txt|_vercel).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
