@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import TransformSection from '@/components/TransformSection';
 import MainContent from '@/components/MainContent';
 
 const Index = () => {
@@ -7,6 +8,7 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
       <HeroSection />
+      <TransformSection />
       <MainContent />
       
       {/* Footer */}
