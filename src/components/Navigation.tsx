@@ -13,6 +13,7 @@ import { StrategyCallForm } from "@/components/StrategyCallForm"; // Import the 
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +58,7 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <Dialog>
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
               <Button 
                 variant="default"
@@ -73,7 +74,7 @@ const Navigation = () => {
                   Fill out the form below and our team will get back to you to schedule your call.
                 </DialogDescription>
               </DialogHeader>
-              <StrategyCallForm />
+              <StrategyCallForm onSuccess={() => setIsDialogOpen(false)} />
             </DialogContent>
           </Dialog>
         </div>
