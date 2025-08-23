@@ -31,7 +31,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/">
-            <img src="/logo.jpeg" alt="neural AI logo" className="h-10" />
+            <img src="/Screenshot_22-8-2025_21853_.jpeg" alt="neural AI logo" className="h-10" />
           </Link>
 
           {/* Navigation Links */}
