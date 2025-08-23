@@ -30,9 +30,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="neural-logo text-2xl">
-            <span className="neural-text">neural</span>
-            <span className="ai-text"> AI</span>
+          <Link to="/">
+            <img src="/logo.jpeg" alt="neural AI logo" className="h-10" />
           </Link>
 
           {/* Navigation Links */}
