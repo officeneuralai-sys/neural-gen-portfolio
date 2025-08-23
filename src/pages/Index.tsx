@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import TransformSection from '@/components/TransformSection';
 import MainContent from '@/components/MainContent';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <HeroSection />
       <TransformSection />
       <MainContent />
+      <TestimonialsSection />
       
       {/* Footer */}
       <footer className="bg-neural-darker border-t border-border py-12 px-6">
