@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { supabase } from "@/lib/supabaseClient"; // Import the Supabase client
+import { supabase } from "@/lib/supabaseClient";
 
 // List of services for the dropdown
 const services = [
@@ -46,7 +46,7 @@ const formSchema = z.object({
   challenge: z.string().min(10, { message: "Please describe your challenge in at least 10 characters." }),
 });
 
-export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) => {
+export const StrategyCallForm = ({ serviceTitle, onSuccess }: { serviceTitle?: string; onSuccess?: () => void }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -63,7 +63,7 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
     const { fullName, workEmail, phoneNumber, companyDomain, serviceOfInterest, challenge } = values;
 
     const { error } = await supabase
-      .from('strategy_call_submissions') // This now matches your table name
+      .from('strategy_call_submissions')
       .insert([
         { 
           full_name: fullName, 
@@ -87,7 +87,8 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
         title: "Request Sent!",
         description: "Our team will review your information and get back to you shortly.",
       });
-      form.reset(); // Reset the form after successful submission
+      form.reset();
+      onSuccess?.(); // Close the dialog on success
     }
   }
 
