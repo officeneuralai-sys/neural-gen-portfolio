@@ -82,11 +82,20 @@ const Navigation = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-lg transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="container mx-auto h-full flex flex-col items-center justify-center text-center">
-            <div className="flex flex-col items-center space-y-8">
-                <Link to="/" onClick={closeMobileMenu} className="text-2xl text-foreground hover:text-primary transition-colors">Home</Link>
-                <Link to="/services" onClick={closeMobileMenu} className="text-2xl text-foreground hover:text-primary transition-colors">Services</Link>
-                <Link to="/why-choose-us" onClick={closeMobileMenu} className="text-2xl text-foreground hover:text-primary transition-colors">Why Choose Us</Link>
+        <div className="container mx-auto h-full flex flex-col items-start justify-center text-left p-6">
+            <div className="flex flex-col items-start space-y-6">
+                <Link to="/" onClick={closeMobileMenu} className="group text-3xl text-foreground transition-colors relative">
+                    Home
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+                <Link to="/services" onClick={closeMobileMenu} className="group text-3xl text-foreground transition-colors relative">
+                    Services
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+                <Link to="/why-choose-us" onClick={closeMobileMenu} className="group text-3xl text-foreground transition-colors relative">
+                    Why Choose Us
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+                </Link>
             </div>
 
             <div className="absolute bottom-10 flex items-center space-x-3">
