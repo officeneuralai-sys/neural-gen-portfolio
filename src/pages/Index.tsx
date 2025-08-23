@@ -31,9 +31,13 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
           {/* About Section */}
           <div className="col-span-1 md:col-span-2">
-             <Link to="/">
-                <img src="/logo.jpeg" alt="neural AI logo" className="h-12 mb-4" />
-              </Link>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src="/Screenshot_22-8-2025_21853_.jpeg" alt="neural AI logo" className="h-10" />
+              <div className="font-zen-dots text-2xl">
+                <span className="text-primary">neural</span>
+                <span className="text-white"> AI</span>
+              </div>
+            </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               A company by <span className="font-semibold text-primary">IIT Madras Undergrads</span>, engineering the future of AI automation to transform businesses with intelligent solutions.
             </p>
