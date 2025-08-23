@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { supabase } from "@/lib/supabaseClient"; // Import the Supabase client
 
 // List of services for the dropdown
 const services = [
@@ -58,13 +59,36 @@ export const StrategyCallForm = ({ serviceTitle }: { serviceTitle?: string }) =>
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real application, you would send this data to your backend
-    console.log("Strategy Call Request:", values);
-    toast({
-      title: "Request Sent!",
-      description: "Our team will review your information and get back to you shortly.",
-    });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const { fullName, workEmail, phoneNumber, companyDomain, serviceOfInterest, challenge } = values;
+
+    const { error } = await supabase
+      .from('strategy_call_submissions') // This now matches your table name
+      .insert([
+        { 
+          full_name: fullName, 
+          work_email: workEmail,
+          phone_number: phoneNumber,
+          company_domain: companyDomain,
+          service_of_interest: serviceOfInterest,
+          challenge: challenge
+        },
+      ]);
+
+    if (error) {
+      console.error('Error inserting data:', error);
+      toast({
+        title: "Error!",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Request Sent!",
+        description: "Our team will review your information and get back to you shortly.",
+      });
+      form.reset(); // Reset the form after successful submission
+    }
   }
 
   return (
