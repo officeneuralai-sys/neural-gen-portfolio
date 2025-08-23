@@ -45,7 +45,7 @@ const TransformSection = () => {
           <div className="reveal">
             <div className="neural-card p-2">
                  <img 
-                    src="" 
+                    src="/build-worlds.jpg" 
                     alt="AI generating 3D worlds" 
                     className="rounded-lg w-full h-auto"
                  />
