@@ -63,7 +63,7 @@ const Services = () => {
               <span className="ai-text"> AI</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              A company by IIT Madras Undergrads, engineering the future of AI automation to transform businesses with intelligent solutions.
+              A company by <span className="font-semibold text-primary">IIT Madras Undergrads</span>, engineering the future of AI automation to transform businesses with intelligent solutions.
             </p>
           </div>
 
