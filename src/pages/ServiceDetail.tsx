@@ -31,19 +31,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Business Leader: A 24/7, Superhuman Support Team",
       points: [
-        "**Slash Operational Costs:** Reduce overhead by automating up to 80% of inbound and outbound calls, freeing up human agents for high-value interactions.",
-        "**Boost Sales & Lead Conversion:** Qualify leads, book appointments, and even close sales around the clock, ensuring you never miss an opportunity.",
-        "**Enhance Customer Satisfaction:** Eliminate wait times and provide instant, consistent, and accurate support in any language, at any time.",
-        "**Gain Actionable Insights:** Turn every conversation into data. Our AI analyzes sentiment, identifies trends, and provides you with a real-time pulse on your customer base."
+        '<span class="font-semibold text-primary">Slash Operational Costs:</span> Reduce overhead by automating up to 80% of inbound and outbound calls, freeing up human agents for high-value interactions.',
+        '<span class="font-semibold text-primary">Boost Sales & Lead Conversion:</span> Qualify leads, book appointments, and even close sales around the clock, ensuring you never miss an opportunity.',
+        '<span class="font-semibold text-primary">Enhance Customer Satisfaction:</span> Eliminate wait times and provide instant, consistent, and accurate support in any language, at any time.',
+        '<span class="font-semibold text-primary">Gain Actionable Insights:</span> Turn every conversation into data. Our AI analyzes sentiment, identifies trends, and provides you with a real-time pulse on your customer base.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Architecture of Conversation",
       points: [
-        "**Core Technology:** Built on a foundation of fine-tuned Large Language Models (LLMs) like GPT-4, combined with proprietary speech-to-text and text-to-speech engines for ultra-low latency.",
-        "**Voice Cloning & TTS:** We utilize advanced text-to-speech (TTS) models that can be cloned from a 30-second audio sample to perfectly match your brand's voice.",
-        "**Real-time Interruption Handling:** Our system is designed to handle natural conversation flow, allowing users to interrupt, ask questions, and change topics without breaking the experience.",
-        "**Seamless API Integration:** The agent integrates directly with your existing CRM (like Salesforce, HubSpot) and internal databases via REST APIs to pull customer data and push call logs and outcomes automatically."
+        '<span class="font-semibold text-primary">Core Technology:</span> Built on a foundation of fine-tuned Large Language Models (LLMs) like GPT-4, combined with proprietary speech-to-text and text-to-speech engines for ultra-low latency.',
+        '<span class="font-semibold text-primary">Voice Cloning & TTS:</span> We utilize advanced text-to-speech (TTS) models that can be cloned from a 30-second audio sample to perfectly match your brand\'s voice.',
+        '<span class="font-semibold text-primary">Real-time Interruption Handling:</span> Our system is designed to handle natural conversation flow, allowing users to interrupt, ask questions, and change topics without breaking the experience.',
+        '<span class="font-semibold text-primary">Seamless API Integration:</span> The agent integrates directly with your existing CRM (like Salesforce, HubSpot) and internal databases via REST APIs to pull customer data and push call logs and outcomes automatically.'
       ]
     },
     caseStudy: {
@@ -74,19 +74,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Business Leader: Reclaim Your Team's Time",
       points: [
-        "**Boost Productivity:** Liberate your employees from tedious tasks like data entry, report generation, and invoice processing. We've found that our solutions save an average of 15+ hours per employee, per week.",
-        "**Eliminate Human Error:** Achieve near-100% accuracy in your processes, reducing costly mistakes and ensuring data integrity.",
-        "**Improve Scalability:** Handle a 10x workload without a corresponding increase in headcount. Our AI bots work 24/7 without fatigue.",
-        "**Enhance Compliance:** Automate regulatory checks and audit trails to ensure your business operations are always compliant."
+        '<span class="font-semibold text-primary">Boost Productivity:</span> Liberate your employees from tedious tasks like data entry, report generation, and invoice processing. We\'ve found that our solutions save an average of 15+ hours per employee, per week.',
+        '<span class="font-semibold text-primary">Eliminate Human Error:</span> Achieve near-100% accuracy in your processes, reducing costly mistakes and ensuring data integrity.',
+        '<span class="font-semibold text-primary">Improve Scalability:</span> Handle a 10x workload without a corresponding increase in headcount. Our AI bots work 24/7 without fatigue.',
+        '<span class="font-semibold text-primary">Enhance Compliance:</span> Automate regulatory checks and audit trails to ensure your business operations are always compliant.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: Building Your Digital Workforce",
       points: [
-        "**Core Technology:** We utilize a combination of established RPA platforms and custom Python scripts to create resilient and efficient bots.",
-        "**Intelligent Document Processing (IDP):** Our bots can read and understand unstructured documents like invoices and contracts using Optical Character Recognition (OCR) and Natural Language Processing (NLP).",
-        "**API & UI Integration:** We build automations that can interact with applications at both the API level (for speed and stability) and the UI level (for legacy systems).",
-        "**No-Code Workflow Builder:** We provide a user-friendly, no-code interface that allows your team to design and deploy their own simple automations without technical expertise."
+        '<span class="font-semibold text-primary">Core Technology:</span> We utilize a combination of established RPA platforms and custom Python scripts to create resilient and efficient bots.',
+        '<span class="font-semibold text-primary">Intelligent Document Processing (IDP):</span> Our bots can read and understand unstructured documents like invoices and contracts using Optical Character Recognition (OCR) and Natural Language Processing (NLP).',
+        '<span class="font-semibold text-primary">API & UI Integration:</span> We build automations that can interact with applications at both the API level (for speed and stability) and the UI level (for legacy systems).',
+        '<span class="font-semibold text-primary">No-Code Workflow Builder:</span> We provide a user-friendly, no-code interface that allows your team to design and deploy their own simple automations without technical expertise.'
       ]
     },
     caseStudy: {
@@ -117,19 +117,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Business Leader: Eyes Everywhere, All the Time",
       points: [
-        "**Proactive Threat Detection:** Receive instant alerts for security events like unauthorized access, theft, or unusual behavior, allowing you to act before it's too late.",
-        "**Automated Compliance:** Ensure safety and operational protocols are being followed, from verifying hard-hat usage on a construction site to monitoring hand-washing in a restaurant.",
-        "**Optimize Your Space:** Use heatmap and foot-traffic analysis to understand customer behavior, optimize store layouts, and improve product placement.",
-        "**Reduce Monitoring Costs:** Drastically reduce the need for human security personnel to constantly watch live feeds, while increasing the effectiveness of your surveillance."
+        '<span class="font-semibold text-primary">Proactive Threat Detection:</span> Receive instant alerts for security events like unauthorized access, theft, or unusual behavior, allowing you to act before it\'s too late.',
+        '<span class="font-semibold text-primary">Automated Compliance:</span> Ensure safety and operational protocols are being followed, from verifying hard-hat usage on a construction site to monitoring hand-washing in a restaurant.',
+        '<span class="font-semibold text-primary">Optimize Your Space:</span> Use heatmap and foot-traffic analysis to understand customer behavior, optimize store layouts, and improve product placement.',
+        '<span class="font-semibold text-primary">Reduce Monitoring Costs:</span> Drastically reduce the need for human security personnel to constantly watch live feeds, while increasing the effectiveness of your surveillance.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: Seeing the World in Data",
       points: [
-        "**Core Technology:** We use state-of-the-art Convolutional Neural Networks (CNNs), specifically models like YOLO (You Only Look Once) for real-time object detection and classification.",
-        "**Emotion & Behavior Analysis:** Our system can be trained to recognize specific actions or even gauge crowd sentiment by analyzing facial expressions and body language.",
-        "**Edge & Cloud Processing:** Depending on your needs, we can deploy models directly on-site (on the edge) for low-latency alerts or process feeds in the cloud for more complex, large-scale analysis.",
-        "**Custom Model Training:** We can fine-tune our models on your specific data to recognize unique objects, actions, or compliance requirements relevant to your business."
+        '<span class="font-semibold text-primary">Core Technology:</span> We use state-of-the-art Convolutional Neural Networks (CNNs), specifically models like YOLO (You Only Look Once) for real-time object detection and classification.',
+        '<span class="font-semibold text-primary">Emotion & Behavior Analysis:</span> Our system can be trained to recognize specific actions or even gauge crowd sentiment by analyzing facial expressions and body language.',
+        '<span class="font-semibold text-primary">Edge & Cloud Processing:</span> Depending on your needs, we can deploy models directly on-site (on the edge) for low-latency alerts or process feeds in the cloud for more complex, large-scale analysis.',
+        '<span class="font-semibold text-primary">Custom Model Training:</span> We can fine-tune our models on your specific data to recognize unique objects, actions, or compliance requirements relevant to your business.'
       ]
     },
     caseStudy: {
@@ -160,19 +160,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Business Leader: Your AI Co-Pilot",
       points: [
-        "**Predictive Forecasting:** Move beyond historical data and start predicting future trends, from sales to customer behavior.",
-        "**Actionable Insights:** Get clear, actionable recommendations to improve efficiency, reduce costs, and drive growth.",
-        "**Automated Reporting:** Eliminate manual report generation with automated, real-time dashboards.",
-        "**Enhanced Decision Making:** Make faster, more informed decisions based on comprehensive data analysis."
+        '<span class="font-semibold text-primary">Predictive Forecasting:</span> Move beyond historical data and start predicting future trends, from sales to customer behavior.',
+        '<span class="font-semibold text-primary">Actionable Insights:</span> Get clear, actionable recommendations to improve efficiency, reduce costs, and drive growth.',
+        '<span class="font-semibold text-primary">Automated Reporting:</span> Eliminate manual report generation with automated, real-time dashboards.',
+        '<span class="font-semibold text-primary">Enhanced Decision Making:</span> Make faster, more informed decisions based on comprehensive data analysis.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Data Science Engine",
       points: [
-        "**Core Technology:** We use a combination of machine learning models, including time-series analysis, regression, and classification algorithms.",
-        "**Data Integration:** Our platform can connect to a wide range of data sources, including databases, APIs, and flat files.",
-        "**Real-time Processing:** We use a streaming data architecture to provide real-time analytics and insights.",
-        "**Customizable Dashboards:** Our dashboards are built with modern data visualization libraries and can be fully customized to your needs."
+        '<span class="font-semibold text-primary">Core Technology:</span> We use a combination of machine learning models, including time-series analysis, regression, and classification algorithms.',
+        '<span class="font-semibold text-primary">Data Integration:</span> Our platform can connect to a wide range of data sources, including databases, APIs, and flat files.',
+        '<span class="font-semibold text-primary">Real-time Processing:</span> We use a streaming data architecture to provide real-time analytics and insights.',
+        '<span class="font-semibold text-primary">Customizable Dashboards:</span> Our dashboards are built with modern data visualization libraries and can be fully customized to your needs.'
       ]
     },
     caseStudy: {
@@ -203,19 +203,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Restaurant Owner: The Perfectly Run Restaurant",
       points: [
-        "**Streamlined Ordering:** Implement AI-powered ordering through QR codes, voice, or digital menus to eliminate errors and speed up service.",
-        "**Optimized Kitchen Flow:** Our system intelligently routes orders to the correct stations, ensuring food is prepared efficiently and delivered hot.",
-        "**Smart Inventory Management:** Reduce food waste and never run out of a key ingredient again with predictive inventory tracking and automated ordering.",
-        "**Enhanced Customer Experience:** Reduce wait times, improve order accuracy, and gather valuable feedback to keep your customers coming back."
+        '<span class="font-semibold text-primary">Streamlined Ordering:</span> Implement AI-powered ordering through QR codes, voice, or digital menus to eliminate errors and speed up service.',
+        '<span class="font-semibold text-primary">Optimized Kitchen Flow:</span> Our system intelligently routes orders to the correct stations, ensuring food is prepared efficiently and delivered hot.',
+        '<span class="font-semibold text-primary">Smart Inventory Management:</span> Reduce food waste and never run out of a key ingredient again with predictive inventory tracking and automated ordering.',
+        '<span class="font-semibold text-primary">Enhanced Customer Experience:</span> Reduce wait times, improve order accuracy, and gather valuable feedback to keep your customers coming back.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Smart Restaurant Stack",
       points: [
-        "**Core Technology:** A suite of integrated AI models for order processing (NLP), kitchen workflow optimization (reinforcement learning), and inventory forecasting (time-series analysis).",
-        "**POS Integration:** Seamlessly integrates with your existing Point of Sale (POS) system for a unified data stream.",
-        "**Real-time Dashboard:** A centralized dashboard provides a real-time overview of all restaurant operations, from order status to inventory levels.",
-        "**Customizable Modules:** Our platform is modular, allowing you to start with one aspect (like ordering) and add more capabilities as your needs grow."
+        '<span class="font-semibold text-primary">Core Technology:</span> A suite of integrated AI models for order processing (NLP), kitchen workflow optimization (reinforcement learning), and inventory forecasting (time-series analysis).',
+        '<span class="font-semibold text-primary">POS Integration:</span> Seamlessly integrates with your existing Point of Sale (POS) system for a unified data stream.',
+        '<span class="font-semibold text-primary">Real-time Dashboard:</span> A centralized dashboard provides a real-time overview of all restaurant operations, from order status to inventory levels.',
+        '<span class="font-semibold text-primary">Customizable Modules:</span> Our platform is modular, allowing you to start with one aspect (like ordering) and add more capabilities as your needs grow.'
       ]
     },
     caseStudy: {
@@ -246,19 +246,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Marketer: Your Unfair Advantage",
       points: [
-        "**Hyper-Personalization at Scale:** Deliver unique, personalized messages and offers to every single lead, automatically.",
-        "**Intelligent Lead Scoring:** Our AI analyzes lead behavior to identify your hottest prospects, so your sales team can focus on closing deals.",
-        "**Automated Content Creation:** Generate high-quality, on-brand marketing copy, social media posts, and ad variations in seconds.",
-        "**Predictive Campaign Optimization:** Our platform automatically adjusts your campaigns in real-time to maximize performance and ROI."
+        '<span class="font-semibold text-primary">Hyper-Personalization at Scale:</span> Deliver unique, personalized messages and offers to every single lead, automatically.',
+        '<span class="font-semibold text-primary">Intelligent Lead Scoring:</span> Our AI analyzes lead behavior to identify your hottest prospects, so your sales team can focus on closing deals.',
+        '<span class="font-semibold text-primary">Automated Content Creation:</span> Generate high-quality, on-brand marketing copy, social media posts, and ad variations in seconds.',
+        '<span class="font-semibold text-primary">Predictive Campaign Optimization:</span> Our platform automatically adjusts your campaigns in real-time to maximize performance and ROI.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Modern Marketing Stack",
       points: [
-        "**Core Technology:** A combination of Generative AI for content creation, predictive analytics for lead scoring, and reinforcement learning for campaign optimization.",
-        "**CRM & Ad Platform Integration:** Seamlessly integrates with major CRMs (Salesforce, HubSpot) and ad platforms (Google, Facebook) via their APIs.",
-        "**Real-time Data Processing:** Our system processes user interactions in real-time to update lead scores and adjust campaign parameters on the fly.",
-        "**A/B/n Testing:** Go beyond simple A/B testing. Our AI can test thousands of variations of a campaign simultaneously to find the optimal combination."
+        '<span class="font-semibold text-primary">Core Technology:</span> A combination of Generative AI for content creation, predictive analytics for lead scoring, and reinforcement learning for campaign optimization.',
+        '<span class="font-semibold text-primary">CRM & Ad Platform Integration:</span> Seamlessly integrates with major CRMs (Salesforce, HubSpot) and ad platforms (Google, Facebook) via their APIs.',
+        '<span class="font-semibold text-primary">Real-time Data Processing:</span> Our system processes user interactions in real-time to update lead scores and adjust campaign parameters on the fly.',
+        '<span class="font-semibold text-primary">A/B/n Testing:</span> Go beyond simple A/B testing. Our AI can test thousands of variations of a campaign simultaneously to find the optimal combination.'
       ]
     },
     caseStudy: {
@@ -289,19 +289,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Real Estate Professional: Your AI Assistant",
       points: [
-        "**Automated Lead Qualification:** Our AI agent engages with every new lead 24/7, asks qualifying questions, and schedules appointments, so you only spend time on serious buyers and sellers.",
-        "**Smart Property Matching:** Go beyond basic filters. Our AI understands lifestyle needs and preferences to suggest the perfect properties to your clients.",
-        "**AI-Powered Marketing:** Automatically generate compelling property descriptions, social media posts, and ad copy for your listings.",
-        "**Predictive Market Analysis:** Get AI-powered insights into market trends and pricing to better advise your clients and close deals faster."
+        '<span class="font-semibold text-primary">Automated Lead Qualification:</span> Our AI agent engages with every new lead 24/7, asks qualifying questions, and schedules appointments, so you only spend time on serious buyers and sellers.',
+        '<span class="font-semibold text-primary">Smart Property Matching:</span> Go beyond basic filters. Our AI understands lifestyle needs and preferences to suggest the perfect properties to your clients.',
+        '<span class="font-semibold text-primary">AI-Powered Marketing:</span> Automatically generate compelling property descriptions, social media posts, and ad copy for your listings.',
+        '<span class="font-semibold text-primary">Predictive Market Analysis:</span> Get AI-powered insights into market trends and pricing to better advise your clients and close deals faster.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Smart Real Estate Platform",
       points: [
-        "**Core Technology:** A suite of AI models including a conversational AI for lead engagement, a recommendation engine for property matching, and a predictive analytics model for market analysis.",
-        "**MLS & CRM Integration:** We have pre-built integrations with major MLS and CRM platforms to ensure a seamless flow of data.",
-        "**Natural Language Processing (NLP):** Our AI can understand and respond to complex, conversational inquiries from potential clients.",
-        "**Data-Driven Insights:** We leverage a wide range of data sources, including property data, market trends, and demographic information, to power our AI models."
+        '<span class="font-semibold text-primary">Core Technology:</span> A suite of AI models including a conversational AI for lead engagement, a recommendation engine for property matching, and a predictive analytics model for market analysis.',
+        '<span class="font-semibold text-primary">MLS & CRM Integration:</span> We have pre-built integrations with major MLS and CRM platforms to ensure a seamless flow of data.',
+        '<span class="font-semibold text-primary">Natural Language Processing (NLP):</span> Our AI can understand and respond to complex, conversational inquiries from potential clients.',
+        '<span class="font-semibold text-primary">Data-Driven Insights:</span> We leverage a wide range of data sources, including property data, market trends, and demographic information, to power our AI models.'
       ]
     },
     caseStudy: {
@@ -332,19 +332,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Visionary: Your Product, Supercharged",
       points: [
-        "**AI at the Core:** We build your application with AI in mind from day one, enabling features like personalization, recommendation engines, and intelligent automation.",
-        "**Faster Time to Market:** Our AI-assisted development process and modern tech stack allow us to build and launch your product up to 70% faster than traditional agencies.",
-        "**Scalable & Future-Proof:** We build on a modern, serverless architecture that can scale to millions of users without compromising performance.",
-        "**A True Technology Partner:** We don't just build and leave. We provide ongoing support and strategic guidance to ensure your product continues to evolve and succeed."
+        '<span class="font-semibold text-primary">AI at the Core:</span> We build your application with AI in mind from day one, enabling features like personalization, recommendation engines, and intelligent automation.',
+        '<span class="font-semibold text-primary">Faster Time to Market:</span> Our AI-assisted development process and modern tech stack allow us to build and launch your product up to 70% faster than traditional agencies.',
+        '<span class="font-semibold text-primary">Scalable & Future-Proof:</span> We build on a modern, serverless architecture that can scale to millions of users without compromising performance.',
+        '<span class="font-semibold text-primary">A True Technology Partner:</span> We don\'t just build and leave. We provide ongoing support and strategic guidance to ensure your product continues to evolve and succeed.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: A Modern, AI-First Stack",
       points: [
-        "**Core Technology:** We leverage the latest frameworks and technologies, including React/Next.js for the frontend, Node.js/Python for the backend, and a serverless architecture.",
-        "**AI-Assisted Development:** Our developers use AI-powered tools for code generation, bug detection, and automated testing, dramatically accelerating the development process.",
-        "**Scalable Backend:** We build on serverless platforms like Supabase and Vercel, ensuring your application is scalable, secure, and cost-effective.",
-        "**Continuous Integration & Deployment (CI/CD):** We implement a robust CI/CD pipeline to automate the testing and deployment process, ensuring rapid and reliable releases."
+        '<span class="font-semibold text-primary">Core Technology:</span> We leverage the latest frameworks and technologies, including React/Next.js for the frontend, Node.js/Python for the backend, and a serverless architecture.',
+        '<span class="font-semibold text-primary">AI-Assisted Development:</span> Our developers use AI-powered tools for code generation, bug detection, and automated testing, dramatically accelerating the development process.',
+        '<span class="font-semibold text-primary">Scalable Backend:</span> We build on serverless platforms like Supabase and Vercel, ensuring your application is scalable, secure, and cost-effective.',
+        '<span class="font-semibold text-primary">Continuous Integration & Deployment (CI/CD):</span> We implement a robust CI/CD pipeline to automate the testing and deployment process, ensuring rapid and reliable releases.'
       ]
     },
     caseStudy: {
@@ -375,19 +375,19 @@ const serviceDetails: { [key: string]: any } = {
     clientPerspective: {
       title: "For the Brand Builder: Your Never-Ending Content Machine",
       points: [
-        "**Consistent, High-Quality Content:** Never worry about what to post again. Our AI generates a steady stream of engaging, on-brand content for your social media channels.",
-        "**Save Time & Resources:** Free up your team from the time-consuming task of content creation and focus on higher-level strategy.",
-        "**Boost Engagement:** Our AI analyzes what content resonates with your audience and automatically creates more of it, leading to a significant increase in likes, comments, and shares.",
-        "**Maintain a Cohesive Brand Voice:** Ensure every post is perfectly aligned with your brand's tone and style, no matter who is managing your social media."
+        '<span class="font-semibold text-primary">Consistent, High-Quality Content:</span> Never worry about what to post again. Our AI generates a steady stream of engaging, on-brand content for your social media channels.',
+        '<span class="font-semibold text-primary">Save Time & Resources:</span> Free up your team from the time-consuming task of content creation and focus on higher-level strategy.',
+        '<span class="font-semibold text-primary">Boost Engagement:</span> Our AI analyzes what content resonates with your audience and automatically creates more of it, leading to a significant increase in likes, comments, and shares.',
+        '<span class="font-semibold text-primary">Maintain a Cohesive Brand Voice:</span> Ensure every post is perfectly aligned with your brand\'s tone and style, no matter who is managing your social media.'
       ]
     },
     teacherPerspective: {
       title: "For the Technologist: The Content Generation Engine",
       points: [
-        "**Core Technology:** We use a fine-tuned Generative AI model that has been trained on a massive dataset of high-performing social media content.",
-        "**Brand Voice Cloning:** Our platform can learn and replicate your unique brand voice from just a few examples of your existing content.",
-        "**Platform-Specific Optimization:** The AI automatically adapts the content for each social media platform, ensuring it is optimized for the unique format and audience of each.",
-        "**Engagement Analytics:** We track the performance of every post and use that data to continuously improve the AI's content generation capabilities."
+        '<span class="font-semibold text-primary">Core Technology:</span> We use a fine-tuned Generative AI model that has been trained on a massive dataset of high-performing social media content.',
+        '<span class="font-semibold text-primary">Brand Voice Cloning:</span> Our platform can learn and replicate your unique brand voice from just a few examples of your existing content.',
+        '<span class="font-semibold text-primary">Platform-Specific Optimization:</span> The AI automatically adapts the content for each social media platform, ensuring it is optimized for the unique format and audience of each.',
+        '<span class="font-semibold text-primary">Engagement Analytics:</span> We track the performance of every post and use that data to continuously improve the AI\'s content generation capabilities.'
       ]
     },
     caseStudy: {
@@ -569,10 +569,9 @@ const ServiceDetail = () => {
         <div className="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
           {/* About Section */}
           <div className="col-span-1 md:col-span-2">
-            <div className="neural-logo text-3xl mb-4">
-              <span className="neural-text">neural</span>
-              <span className="ai-text"> AI</span>
-            </div>
+             <Link to="/">
+                <img src="/Screenshot_22-8-2025_21853_.jpeg" alt="neural AI logo" className="h-12 mb-4" />
+              </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
               A company by <span className="font-semibold text-primary">IIT Madras Undergrads</span>, engineering the future of AI automation to transform businesses with intelligent solutions.
             </p>
