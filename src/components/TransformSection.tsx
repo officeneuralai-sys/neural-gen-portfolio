@@ -36,7 +36,7 @@ const TransformSection = () => {
               We don't just implement AI; we architect intelligent ecosystems that learn, adapt, and drive unprecedented growth. Turn your vision into reality and build a more dynamic, resilient business with our bespoke solutions.
             </p>
             <a 
-              href="#main-content"
+              href="services"
               className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
             >
               Explore Our Solutions
