@@ -36,7 +36,7 @@ const Index = () => {
               <span className="ai-text"> AI</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              A company by IIT Madras Undergrads, engineering the future of AI automation to transform businesses with intelligent solutions.
+              A company by <span className="font-semibold text-primary">IIT Madras Undergrads</span>, engineering the future of AI automation to transform businesses with intelligent solutions.
             </p>
           </div>
 
@@ -50,17 +50,21 @@ const Index = () => {
             </ul>
           </div>
 
-          {/* Services Section */}
+          {/* Contact Us Section */}
           <div>
-            <h4 className="font-semibold text-lg text-primary mb-4">Services</h4>
+            <h4 className="font-semibold text-lg text-primary mb-4">Contact Us</h4>
             <ul className="space-y-3">
-              {services.map(service => (
-                <li key={service.id}>
-                  <Link to={`/services/${service.id}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <a 
+                  href="mailto:office@neuralai.in" 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  office@neuralai.in
+                </a>
+              </li>
+              <li className="text-muted-foreground">
+                Company based in New Delhi, India
+              </li>
             </ul>
           </div>
         </div>
